@@ -65,22 +65,30 @@ Il est aussi possible d’utiliser un autre fichier XML personnel, à condition 
 
 ---
 
-## Structure attendue du projet
+## Compiler et lancer
+
+Prérequis : Java 17 (JDK).
+
+```bash
+javac -d out src/*.java
+java -cp out Main nuages.xml     # ou arbres.xml, ou un autre fichier XML
+```
+
+Les tests unitaires (`tests/`) utilisent JUnit 5.
+
+---
+
+## Structure du dépôt
 
 ```bash
 .
-├── .github/
-│   └── workflows/
-│       ├── ci.yml
-│       └── pages.yml
-├── .gitlab-ci.yml
-├── src/
-├── tests/
-├── lib/
-├── out/
-├── report/
-├── arbres.xml
-├── nuages.xml
-├── checkstyle.xml
-├── README.md
-└── CONTRIBUTING.md
+├── .github/workflows/static.yml   # Publication du site sur GitHub Pages
+├── src/                           # Code source Java (Main, Typologie, Categorie, ...)
+├── tests/                         # Tests unitaires JUnit
+├── arbres.xml                     # Exemple de typologie
+├── nuages.xml                     # Exemple de typologie (fichier par défaut)
+├── checkstyle.xml                 # Règles de style
+├── index.html                     # Site du projet
+├── CONTRIBUTING.md
+└── README.md
+```
